@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BarberQueue — Gerenciamento de Barbearia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">✂ <strong>BarberQueue</strong><span>Gerenciamento de Barbearia</span></div>
+    <nav class="abas" id="abas">
+      <button class="aba ativa" data-aba="fila">Fila</button>
+      <button class="aba" data-aba="clientes">Clientes</button>
+      <button class="aba" data-aba="servicos">Serviços</button>
+      <button class="aba" data-aba="relatorio">Relatório</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== FILA ===================== -->
+    <section id="fila" class="painel ativo">
+      <div class="grade">
+        <div class="cartao">
+          <h2>Adicionar à fila</h2>
+          <label for="selCliente">Cliente</label>
+          <select id="selCliente"></select>
+          <label>Serviços desejados</label>
+          <div id="listaServicosFila" class="checks"></div>
+          <div class="total-linha">Total: <strong id="totalPrevio">R$ 0,00</strong></div>
+          <button class="btn primario" id="btnEntrar">Entrar na fila</button>
+        </div>
+
+        <div>
+          <div class="cartao destaque" id="boxAtendimento"></div>
+          <div class="cartao">
+            <div class="cabecalho-cartao">
+              <h2>Fila de espera <span class="contador" id="contFila">0</span></h2>
+              <button class="btn primario" id="btnProximo">Chamar próximo ▶</button>
+            </div>
+            <ol id="listaFila" class="fila"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CLIENTES ===================== -->
+    <section id="clientes" class="painel">
+      <div class="grade">
+        <div class="cartao">
+          <h2>Novo cliente</h2>
+          <label for="cliNome">Nome *</label>
+          <input id="cliNome" type="text" placeholder="Ex.: Carlos Silva" maxlength="80">
+          <label for="cliTel">Telefone</label>
+          <input id="cliTel" type="tel" placeholder="(82) 99999-0000" maxlength="20">
+          <button class="btn primario" id="btnCliente">Cadastrar cliente</button>
+        </div>
+        <div class="cartao">
+          <h2>Clientes cadastrados</h2>
+          <input id="cliBusca" type="search" placeholder="🔍 Buscar por nome...">
+          <table><thead><tr><th>Nome</th><th>Telefone</th><th></th></tr></thead><tbody id="tabClientes"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVIÇOS ===================== -->
+    <section id="servicos" class="painel">
+      <div class="grade">
+        <div class="cartao">
+          <h2>Novo serviço</h2>
+          <label for="svNome">Nome do serviço *</label>
+          <input id="svNome" type="text" placeholder="Ex.: Pigmentação" maxlength="60">
+          <label for="svPreco">Preço (R$) *</label>
+          <input id="svPreco" type="text" inputmode="decimal" placeholder="Ex.: 40,00">
+          <button class="btn primario" id="btnServico">Cadastrar serviço</button>
+        </div>
+        <div class="cartao">
+          <h2>Tabela de preços</h2>
+          <table><thead><tr><th>Serviço</th><th>Preço</th><th></th></tr></thead><tbody id="tabServicos"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RELATÓRIO ===================== -->
+    <section id="relatorio" class="painel">
+      <div class="cartao">
+        <div class="cabecalho-cartao">
+          <h2>Resumo de atendimentos</h2>
+          <div class="filtro">
+            <label for="relData">Data</label>
+            <input id="relData" type="date">
+            <button class="btn" id="btnHoje">Hoje</button>
+            <button class="btn" id="btnTodos">Todos</button>
+          </div>
+        </div>
+        <div class="metricas">
+          <div class="metrica"><span>Clientes atendidos</span><strong id="mClientes">0</strong></div>
+          <div class="metrica"><span>Serviços realizados</span><strong id="mServicos">0</strong></div>
+          <div class="metrica ouro"><span>Faturamento total</span><strong id="mTotal">R$ 0,00</strong></div>
+        </div>
+        <h3>Detalhe por serviço</h3>
+        <table><thead><tr><th>Serviço</th><th>Quantidade</th><th>Faturado</th></tr></thead><tbody id="tabRelatorio"></tbody></table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

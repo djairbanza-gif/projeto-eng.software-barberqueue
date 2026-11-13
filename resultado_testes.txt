@@ -1,0 +1,26 @@
+test_busca_cliente_por_nome (tests.test_api.TestClientes.test_busca_cliente_por_nome) ... ok
+test_ct01_cadastrar_e_listar_cliente (tests.test_api.TestClientes.test_ct01_cadastrar_e_listar_cliente) ... ok
+test_ct02_rejeita_cliente_sem_nome (tests.test_api.TestClientes.test_ct02_rejeita_cliente_sem_nome) ... ok
+test_cancelar_quem_aguarda (tests.test_api.TestFilaFIFO.test_cancelar_quem_aguarda) ... ok
+test_cliente_nao_entra_duas_vezes (tests.test_api.TestFilaFIFO.test_cliente_nao_entra_duas_vezes) ... ok
+test_ct05_ordem_fifo (tests.test_api.TestFilaFIFO.test_ct05_ordem_fifo)
+Primeiro a entrar deve ser o primeiro a ser atendido. ... ok
+test_ct06_total_calculado_corretamente (tests.test_api.TestFilaFIFO.test_ct06_total_calculado_corretamente) ... ok
+test_exige_ao_menos_um_servico (tests.test_api.TestFilaFIFO.test_exige_ao_menos_um_servico) ... ok
+test_fila_vazia_ao_chamar_proximo (tests.test_api.TestFilaFIFO.test_fila_vazia_ao_chamar_proximo) ... ok
+test_nao_chama_proximo_com_atendimento_em_andamento (tests.test_api.TestFilaFIFO.test_nao_chama_proximo_com_atendimento_em_andamento) ... ok
+test_posicoes_da_fila (tests.test_api.TestFilaFIFO.test_posicoes_da_fila) ... ok
+test_preco_historico_nao_muda_apos_reajuste (tests.test_api.TestFilaFIFO.test_preco_historico_nao_muda_apos_reajuste)
+O total já registrado deve ser preservado se o preço do serviço mudar depois. ... ok
+test_cliente_com_historico_nao_pode_ser_removido (tests.test_api.TestRelatorio.test_cliente_com_historico_nao_pode_ser_removido) ... ok
+test_ct07_relatorio_de_faturamento (tests.test_api.TestRelatorio.test_ct07_relatorio_de_faturamento) ... ok
+test_relatorio_vazio (tests.test_api.TestRelatorio.test_relatorio_vazio) ... ok
+test_ct03_cadastrar_servico_com_preco (tests.test_api.TestServicos.test_ct03_cadastrar_servico_com_preco) ... ok
+test_ct04_rejeita_preco_invalido (tests.test_api.TestServicos.test_ct04_rejeita_preco_invalido) ... ok
+test_editar_e_remover_servico (tests.test_api.TestServicos.test_editar_e_remover_servico) ... ok
+test_servico_duplicado (tests.test_api.TestServicos.test_servico_duplicado) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.250s
+
+OK
